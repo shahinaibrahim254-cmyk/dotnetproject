@@ -1,0 +1,98 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site18.Master.cs" Inherits="webapp2app.Site18" %>
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+    <style>
+        /* Full Red Theme */
+        :root {
+            --main-red: #b71c1c;
+            --dark-red: #7f0000;
+            --light-red: #ffebee;
+            --text-white: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: var(--light-red);
+        }
+
+        .header {
+            background: linear-gradient(90deg, var(--main-red), var(--dark-red));
+            color: var(--text-white);
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        .navbar {
+            background-color: var(--main-red);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .navbar a {
+            color: var(--text-white);
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            background-color: var(--dark-red);
+            border-radius: 4px;
+        }
+
+        .container {
+            margin: 30px auto;
+            padding: 25px;
+            width: 80%;
+            background-color: #fff;
+            border-radius: 6px;
+            box-shadow: 0 0 10px rgba(183, 28, 28, 0.3);
+        }
+
+        .footer {
+            background-color: var(--main-red);
+            color: var(--text-white);
+            text-align: center;
+            padding: 12px;
+            font-size: 14px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        h2, h3, h4, h5 {
+            color: var(--main-red);
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+        <div class="header">
+            My Red Themed Website
+        </div>
+
+        <div class="navbar">
+            <a href="Default.aspx">Home</a>
+            <a href="viewfeedback.aspx">View Feedback</a>
+            <a href="contact.aspx">Contact</a>
+        </div>
+
+        <div class="container">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+
+        <div class="footer">
+            © <%= DateTime.Now.Year %> My Red Themed Site | All Rights Reserved
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site17.Master.cs" Inherits="dotnetproject.Site17" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>User Management</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #fff5f5;
+            margin: 0;
+        }
+        .header {
+            background-color: #cc0000;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+        }
+        .content {
+            margin: 30px auto;
+            width: 80%;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #cc0000;
+        }
+        .footer {
+            text-align: center;
+            color: gray;
+            margin-top: 30px;
+        }
+        .gridview {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .gridview th {
+            background-color: #cc0000;
+            color: white;
+            padding: 8px;
+            text-align: center;
+        }
+        .gridview td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+        .gridview tr:nth-child(even) {
+            background-color: #f9d9d9;
+        }
+        .gridview tr:hover {
+            background-color: #ffe5e5;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+        <div class="header">
+            User Management System
+        </div>
+        <div class="content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        </div>
+        <div class="footer">
+            &copy; 2025 User Management Portal
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,71 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site14.Master.cs" Inherits="dotnetproject.Site14" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>Billing - Site14</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fdf2f2; /* light red background */
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #b71c1c; /* dark red header */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .navbar {
+            background-color: #d32f2f; /* red navbar */
+            overflow: hidden;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: #ffebee;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #f44336; /* hover lighter red */
+            color: white;
+        }
+        .content {
+            padding: 20px;
+            min-height: 500px;
+            background-color: #ffffff;
+        }
+        .footer {
+            background-color: #b71c1c;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+        <div class="header">
+            <h1>Billing System</h1>
+        </div>
+
+        <div class="navbar">
+            <a href="UserHome.aspx">Home</a>
+            <a href="ViewBill.aspx">View Bill</a>
+            <a href="Logout.aspx">Logout</a>
+        </div>
+
+        <div class="content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 Billing System. All rights reserved.</p>
+        </div>
+    </form>
+</body>
+</html>

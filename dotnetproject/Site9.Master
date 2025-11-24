@@ -1,0 +1,59 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site9.Master.cs" Inherits="dotnetproject.Site9" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>Edit Product - Admin Panel</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(120deg, #f6d365, #fda085);
+        }
+        header {
+            background-color: #ff7e5f;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        nav {
+            background-color: #feb47b;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #ff7e5f;
+        }
+        .content {
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+        <header>Admin Panel - Edit Product</header>
+        <nav>
+            <a href="AdminHome.aspx">Home</a>
+            <a href="AddCategory.aspx">Add Category</a>
+            <a href="AddProduct.aspx">Add Product</a>
+            <a href="EditProduct.aspx">Edit Product</a>
+        </nav>
+        <div class="content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+    </form>
+</body>
+</html>
+

@@ -1,0 +1,61 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site8.Master.cs" Inherits="dotnetproject.Site8" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>Edit Category</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #ff6666; /* same as Site2 */
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav {
+            background-color: #ff9999;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin-right: 10px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            padding: 20px;
+        }
+        footer {
+            background-color: #ff6666;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+        <header>
+            <h1>Edit Category</h1>
+        </header>
+        <nav>
+            <a href="AdminHome.aspx">Home</a>
+            <a href="AddCategory.aspx">Add Category</a>
+            <a href="EditCategory.aspx">Edit Category</a>
+        </nav>
+        <div class="content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+        <footer>
+            &copy; 2025 My Shop
+        </footer>
+    </form>
+</body>
+</html>
+

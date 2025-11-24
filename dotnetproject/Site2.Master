@@ -1,0 +1,417 @@
+﻿
+<%--<%--<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site2.Master.cs" Inherits="dotnetproject.Site2" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>Online Book Store</title>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: linear-gradient(90deg, #ff6a00, #ee0979);
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        .navbar .logo {
+            font-weight: bold;
+            font-size: 24px;
+            color: #fff;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+        }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .nav-links a:hover {
+            color: #ffd700; /* gold highlight */
+            transform: scale(1.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(to right, #ff6a00, #ee0979), url('https://via.placeholder.com/1600x600') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            margin-top: 70px;
+            border-radius: 0 0 40px 40px;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        }
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+        }
+        .cta-btn {
+            background: #ffd700;
+            color: #ff6a00;
+            padding: 1rem 2rem;
+            font-weight: bold;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .cta-btn:hover {
+            background: #ff8c00;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        /* Categories Section */
+        .categories h2, .featured-books h2, .testimonials h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: #ff6a00;
+        }
+        .category-card {
+            padding: 1rem;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+            color: #fff;
+        }
+        .category-card:hover {
+            transform: translateY(-8px);
+        }
+
+        /* Featured Books */
+        .books-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        .book-card {
+            background: linear-gradient(145deg, #ffecd2, #fcb69f);
+            padding: 1rem;
+            border-radius: 20px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .book-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 24px rgba(0,0,0,0.3);
+        }
+        .book-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        .book-card p {
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+        .book-card .price {
+            font-weight: bold;
+            color: #ee0979;
+        }
+        .buy-btn {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            background: #ff6a00;
+            color: #fff;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .buy-btn:hover {
+            background: #ee0979;
+            transform: scale(1.05);
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 20px;
+            margin: 4rem 2rem;
+            color: #fff;
+        }
+        .newsletter input {
+            padding: 0.8rem;
+            border-radius: 30px;
+            border: none;
+            width: 300px;
+            max-width: 90%;
+            margin-right: 10px;
+        }
+
+        /* Testimonials */
+        .testimonial-card {
+            padding: 2rem;
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
+            border-radius: 20px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(90deg, #ff6a00, #ee0979);
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 40px;
+        }
+        .footer .social-links a {
+            color: #fff;
+            margin: 0 10px;
+            transition: 0.3s;
+        }
+        .footer .social-links a:hover {
+            color: #ffd700;
+        }
+
+        @media (max-width:768px){
+            .nav-links{
+                flex-direction: column;
+                gap: 10px;
+                background: #ff6a00;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                padding: 15px;
+                border-radius: 0 0 12px 12px;
+
+            }
+        }
+        /* Dropdown Styles */
+.nav-links li {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 40px; /* below navbar */
+    left: 0;
+    background: linear-gradient(90deg, #ff6a00, #ee0979);
+    padding: 10px 0;
+    border-radius: 10px;
+    min-width: 150px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    z-index: 200;
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.dropdown-menu li a:hover {
+    background: #ffd700;
+    color: #ff6a00;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+    </style>
+</head>
+<body>
+    <form runat="server">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="logo">📚 BookStore</div>
+            <ul class="nav-links">
+                <li><a href="Home.aspx">Home</a></li>
+                <li><a href="Books.aspx">Books</a></li>
+                <li><a href="login.aspx">Login</a></li>
+                <%--<li><a href="Register.aspx">Register</a></li>--%>
+               <%-- <li class="dropdown">
+        <a href="#">Register ▾</a>
+        <ul class="dropdown-menu">
+            <li><a href="UserRegister.aspx">User</a></li>
+            <li><a href="AdminRegister.aspx">Admin</a></li>
+        </ul>
+    </li>
+                <li><a href="Contact.aspx">Contact</a></li>
+            </ul>
+        </nav>
+
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+
+        <footer class="footer">
+            <p>© 2025 Online Book Store. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a> |
+                <a href="#">Twitter</a> |
+                <a href="#">Instagram</a>
+            </div>
+ <%--       </footer>--%>
+   <%-- </form>
+</body>
+</html>--%>
+
+
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site2.Master.cs" Inherits="dotnetproject.Site2" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>Online Book Store</title>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: linear-gradient(90deg, #ff6a00, #ee0979);
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        .navbar .logo {
+            font-weight: bold;
+            font-size: 24px;
+            color: #fff;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+        }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .nav-links a:hover {
+            color: #ffd700;
+            transform: scale(1.1);
+        }
+
+        /* Dropdown */
+        .nav-links li {
+            position: relative;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background: linear-gradient(90deg, #ff6a00, #ee0979);
+            padding: 10px 0;
+            border-radius: 10px;
+            min-width: 150px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            z-index: 200;
+        }
+        .dropdown-menu li a {
+            display: block;
+            padding: 10px 20px;
+            color: #fff;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(90deg, #ff6a00, #ee0979);
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <form runat="server">
+
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="logo">📚 BookStore</div>
+
+            <ul class="nav-links">
+                <li><a href="Home.aspx">Home</a></li>
+                <li><a href="Books.aspx">Books</a></li>
+                <li><a href="login.aspx">Login</a></li>
+
+                <li class="dropdown">
+                    <a href="#">Register ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="UserRegister.aspx">User</a></li>
+                        <li><a href="AdminRegister.aspx">Admin</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="Contact.aspx">Contact</a></li>
+            </ul>
+        </nav>
+
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+
+        <footer class="footer">
+            <p>© 2025 Online Book Store. All Rights Reserved.</p>
+        </footer>
+    </form>
+</body>
+</html>
+

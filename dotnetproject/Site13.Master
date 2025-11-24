@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site13.Master.cs" Inherits="dotnetproject.Site13" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>User Cart - dotnetproject</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+        }
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 30px;
+            text-align: center;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2rem;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            margin-top: 10px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #feb47b;
+            text-decoration: underline;
+        }
+
+        .content {
+            background: #fff;
+            margin: 40px auto;
+            padding: 40px;
+            width: 85%;
+            border-radius: 20px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="header">
+            <h1>🛒 My Cart</h1>
+            <div class="nav-links">
+                <asp:HyperLink ID="lnkHome" runat="server" NavigateUrl="~/UserHome.aspx">🏠 Home</asp:HyperLink>
+                <asp:HyperLink ID="lnkCart" runat="server" NavigateUrl="~/ViewCart.aspx">🛍️ View Cart</asp:HyperLink>
+            </div>
+        </div>
+
+        <div class="content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,89 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site5.Master.cs" Inherits="dotnetproject.Site5" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>Admin Panel</title>
+    <style>
+        /* --- General Layout --- */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #fdfdfd;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+            padding: 15px 40px;
+            color: #fff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar li {
+            margin-left: 25px;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        .navbar a:hover {
+            opacity: 0.8;
+        }
+
+        .content {
+            padding: 50px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 15px;
+            color: #777;
+            border-top: 1px solid #ddd;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+        <div class="navbar">
+            <h1>Admin Panel</h1>
+            <ul>
+                <li><a href="AdminHome.aspx">Home</a></li>
+                <li><a href="AddCategory.aspx">Categories</a></li>
+                <li><a href="AddProduct.aspx">Products</a></li>
+                <li><a href="usermanagement.aspx">UserManagement</a></li>
+                <li><a href="Logout.aspx">Logout</a></li>
+                <li><a href="feedbackview.aspx">View Feedback</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+
+        <div class="footer">
+            © 2025 Admin Panel. All Rights Reserved.
+        </div>
+    </form>
+</body>
+</html>

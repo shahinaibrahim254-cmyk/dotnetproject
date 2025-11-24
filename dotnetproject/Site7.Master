@@ -1,0 +1,111 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site7.Master.cs" Inherits="dotnetproject.Site7" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>Admin - Add Product</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #fdf5f5;
+            color: #333;
+        }
+        /* Navbar */
+        .navbar {
+            background: linear-gradient(90deg, #ff6a00, #ee0979);
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .navbar h1 {
+            color: #fff;
+            font-size: 26px;
+            margin: 0;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .navbar a:hover {
+            color: #ffd700;
+        }
+
+        /* Content */
+        .content {
+            padding: 50px;
+            max-width: 800px;
+            margin: 60px auto;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        h2 {
+            color: #ee0979;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        label {
+            font-weight: 600;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0 20px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+            font-size: 15px;
+        }
+        textarea { resize: vertical; }
+
+        .btn {
+            background: linear-gradient(135deg, #ff6a00, #ee0979);
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+            background: linear-gradient(90deg, #ff6a00, #ee0979);
+            margin-top: 80px;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+        <div class="navbar">
+            <h1>Admin Panel</h1>
+            <asp:HyperLink ID="lnkHome" runat="server" NavigateUrl="~/AdminHome.aspx">Home</asp:HyperLink>
+        </div>
+
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+
+        <footer>
+            &copy; 2025 Online Book Store. All Rights Reserved.
+        </footer>
+    </form>
+</body>
+</html>
